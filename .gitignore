@@ -1,0 +1,9 @@
+stock_data/
+Scripts/
+Lib/
+Include/
+pyvenv.cfg
+.env
+.vscode/
+.ipynb_checkpoints/
+share/
