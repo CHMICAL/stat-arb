@@ -248,6 +248,25 @@ class Utils():
         new_df = _generate_col(new_df, current_forecast, ticker2, last_known2)
 
         return new_df
+    
+    @staticmethod
+    def calc_lag_std(price_series, lag_order):
+        aggregated_means = []
+        for i in range(0, len(price_series) - lag_order + 1, lag_order):
+            aggregated_mean = np.mean(price_series[i:i + lag_order])
+            aggregated_means.append(aggregated_mean)
+
+        std_deviation = np.std(aggregated_means)
+        return std_deviation
+
+    @staticmethod
+    def find_historical_differences(price_series1, price_series2):
+        if len(price_series1) == len(price_series2):
+            new_series = price_series1
+            new_series = price_series1 - price_series2
+            return new_series
+        else:
+            raise Exception("Both price series must be of the same length")
 
         
         
