@@ -108,7 +108,7 @@ forecasted = Ut.forecasted(lag_order, merged_series, forecast_days)
 actual_final = Ut.create_merged_series(actual1, actual2, ticker1, ticker2)
 forecasted_final = Ut.reverse_differencing(forecasted, price_series_whole, ticker1, ticker2)
 
-'''7. Calculate trade'''
+'''7. Trade'''
 
 # Buy signal - If asset 1 is predicted to increase in price, whilst the other is predicted to decrease. Then go long.
 # Sell signal - If asset 2 is predicted to fall in price, whilst the other is predicted to increase. Then short it.
